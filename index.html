@@ -302,9 +302,10 @@
         .product-image {
             width: 100%;
             height: 300px;
-            object-fit: cover;
+            object-fit: contain;
+            object-position: center;
             border-bottom: 1px solid var(--color-card-border);
-            background-color: var(--color-gray-200);
+            background-color: var(--color-white);
         }
         
         .product-content {
@@ -855,7 +856,8 @@
             <div class="products-grid">
                 <!-- Product 1: РП1 -->
                 <div class="product-card">
-                    <img src="photo_5188444975061397859_y.jpeg" alt="Рукоятка пропорциональная РП1" class="product-image">
+                    <img src="img/RP1.png" alt="Рукоятка пропорциональная РП1" class="product-image" onclick="openImageModal(this.src, this.alt)">
+                    <p class="image-click-hint">Нажмите для увеличения</p>
                     <div class="product-content">
                         <span class="product-code">РП1</span>
                         <h3 class="product-name">Рукоятка пропорциональная РП1</h3>
@@ -900,7 +902,8 @@
 
                 <!-- Product 2: РП2 -->
                 <div class="product-card">
-                    <img src="photo_5188444975061397852_y.jpeg" alt="Рукоятка пропорциональная РП2" class="product-image">
+                    <img src="img/RP2.png" alt="Рукоятка пропорциональная РП2" class="product-image" onclick="openImageModal(this.src, this.alt)">
+                    <p class="image-click-hint">Нажмите для увеличения</p>
                     <div class="product-content">
                         <span class="product-code">РП2</span>
                         <h3 class="product-name">Рукоятка пропорциональная РП2</h3>
@@ -945,7 +948,7 @@
 
                 <!-- Product 3: РР -->
                 <div class="product-card">
-                    <img src="photo_5188444975061397846_y.jpeg" alt="Рукоятка релейная РР" class="product-image" onclick="openImageModal(this.src, this.alt)">
+                    <img src="img/RR.png" alt="Рукоятка релейная РР" class="product-image" onclick="openImageModal(this.src, this.alt)">
                     <p class="image-click-hint">Нажмите для увеличения</p>
                     <div class="product-content">
                         <span class="product-code">РР</span>
@@ -989,7 +992,7 @@
 
                 <!-- Product 4: ЭД -->
                 <div class="product-card">
-                    <img src="photo_5188444975061397857_y.jpeg" alt="Электронный джойстик ЭД" class="product-image" onclick="openImageModal(this.src, this.alt)">
+                    <img src="img/ED.png" alt="Электронный джойстик ЭД" class="product-image" onclick="openImageModal(this.src, this.alt)">
                     <p class="image-click-hint">Нажмите для увеличения</p>
                     <div class="product-content">
                         <span class="product-code">ЭД</span>
@@ -1040,7 +1043,7 @@
 
                 <!-- Product 5: КПС -->
                 <div class="product-card">
-                    <img src="photo_5188444975061397846_y.jpeg" alt="Контроллер преобразования сигналов" class="product-image" onclick="openImageModal(this.src, this.alt)">
+                    <img src="img/KPS.png" alt="Контроллер преобразования сигналов" class="product-image" onclick="openImageModal(this.src, this.alt)">
                     <p class="image-click-hint">Нажмите для увеличения</p>
                     <div class="product-content">
                         <span class="product-code">КПС</span>
