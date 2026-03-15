@@ -1,0 +1,1305 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ООО «ОрганикС» - Органы управления техникой | Каталог продукции</title>
+    <style>
+        /* Design System */
+        :root {
+            --color-white: rgba(255, 255, 255, 1);
+            --color-black: rgba(0, 0, 0, 1);
+            --color-cream-50: rgba(252, 252, 249, 1);
+            --color-cream-100: rgba(255, 255, 253, 1);
+            --color-gray-200: rgba(245, 245, 245, 1);
+            --color-gray-300: rgba(167, 169, 169, 1);
+            --color-gray-400: rgba(119, 124, 124, 1);
+            --color-slate-500: rgba(98, 108, 113, 1);
+            --color-brown-600: rgba(94, 82, 64, 1);
+            --color-charcoal-700: rgba(31, 33, 33, 1);
+            --color-charcoal-800: rgba(38, 40, 40, 1);
+            --color-slate-900: rgba(19, 52, 59, 1);
+            --color-teal-500: rgba(33, 128, 141, 1);
+            --color-teal-600: rgba(29, 116, 128, 1);
+            --color-teal-700: rgba(26, 104, 115, 1);
+            
+            /* Corporate colors - Gentle Green Theme */
+            --color-corporate-green: #2d5a3d;
+            --color-corporate-green-dark: #234a2f;
+            --color-accent-green: #3d7a4d;
+            --color-accent-green-hover: #2f6039;
+            --color-light-green: #7dd98f;
+            --color-light-green-bg: #f8faf9;
+            
+            /* Semantic colors */
+            --color-background: var(--color-cream-50);
+            --color-surface: var(--color-white);
+            --color-text: var(--color-slate-900);
+            --color-text-secondary: var(--color-slate-500);
+            --color-primary: var(--color-corporate-green);
+            --color-primary-hover: var(--color-corporate-green-dark);
+            --color-accent: var(--color-accent-green);
+            --color-border: rgba(94, 82, 64, 0.2);
+            --color-card-border: rgba(94, 82, 64, 0.12);
+            
+            /* Typography */
+            --font-family-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            --font-size-xs: 11px;
+            --font-size-sm: 12px;
+            --font-size-base: 14px;
+            --font-size-md: 16px;
+            --font-size-lg: 18px;
+            --font-size-xl: 20px;
+            --font-size-2xl: 24px;
+            --font-size-3xl: 32px;
+            --font-size-4xl: 40px;
+            --font-weight-normal: 400;
+            --font-weight-medium: 500;
+            --font-weight-semibold: 600;
+            --font-weight-bold: 700;
+            
+            /* Spacing */
+            --space-8: 8px;
+            --space-12: 12px;
+            --space-16: 16px;
+            --space-20: 20px;
+            --space-24: 24px;
+            --space-32: 32px;
+            --space-48: 48px;
+            --space-64: 64px;
+            
+            /* Radius */
+            --radius-sm: 6px;
+            --radius-base: 8px;
+            --radius-md: 10px;
+            --radius-lg: 12px;
+            
+            /* Shadows */
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            
+            /* Animation */
+            --duration-fast: 150ms;
+            --duration-normal: 250ms;
+            --ease-standard: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --color-background: var(--color-charcoal-700);
+                --color-surface: var(--color-charcoal-800);
+                --color-text: var(--color-gray-200);
+                --color-text-secondary: rgba(167, 169, 169, 0.7);
+                --color-border: rgba(119, 124, 124, 0.3);
+                --color-card-border: rgba(119, 124, 124, 0.2);
+            }
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+            font-size: var(--font-size-base);
+        }
+        
+        body {
+            font-family: var(--font-family-base);
+            line-height: 1.6;
+            color: var(--color-text);
+            background-color: var(--color-background);
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        /* Header */
+        .header {
+            background-color: var(--color-surface);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--color-border);
+        }
+        
+        .header-content {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: var(--space-16) var(--space-24);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: var(--font-size-2xl);
+            font-weight: var(--font-weight-bold);
+            color: var(--color-primary);
+        }
+        
+        .logo-tagline {
+            font-size: var(--font-size-sm);
+            color: var(--color-text-secondary);
+            font-weight: var(--font-weight-normal);
+            margin-top: 2px;
+        }
+        
+        .nav {
+            display: flex;
+            gap: var(--space-32);
+        }
+        
+        .nav a {
+            color: var(--color-text);
+            text-decoration: none;
+            font-weight: var(--font-weight-medium);
+            transition: color var(--duration-fast) var(--ease-standard);
+            font-size: var(--font-size-base);
+        }
+        
+        .nav a:hover {
+            color: var(--color-primary);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--color-primary) 0%, #3d7a4d 100%);
+            color: var(--color-white);
+            padding: var(--space-64) var(--space-24);
+            text-align: center;
+        }
+        
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: var(--font-size-4xl);
+            font-weight: var(--font-weight-bold);
+            margin-bottom: var(--space-24);
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: var(--font-size-lg);
+            margin-bottom: var(--space-32);
+            opacity: 0.95;
+        }
+        
+        .hero-contacts {
+            display: flex;
+            gap: var(--space-32);
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: var(--space-32);
+        }
+        
+        .hero-contact-item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-8);
+            font-size: var(--font-size-md);
+        }
+        
+        .hero-contact-item svg {
+            width: 20px;
+            height: 20px;
+        }
+        
+        /* Section */
+        .section {
+            padding: var(--space-64) var(--space-24);
+        }
+        
+        .section-content {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            font-size: var(--font-size-3xl);
+            font-weight: var(--font-weight-bold);
+            margin-bottom: var(--space-16);
+            color: var(--color-text);
+        }
+        
+        .section-subtitle {
+            font-size: var(--font-size-lg);
+            color: var(--color-text-secondary);
+            margin-bottom: var(--space-48);
+        }
+        
+        /* Company Info */
+        .company-info {
+            background-color: var(--color-surface);
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--space-32);
+            margin-top: var(--space-32);
+        }
+        
+        .info-card {
+            padding: var(--space-24);
+            border: 1px solid var(--color-card-border);
+            border-radius: var(--radius-lg);
+            background-color: var(--color-surface);
+        }
+        
+        .info-card h3 {
+            font-size: var(--font-size-xl);
+            font-weight: var(--font-weight-semibold);
+            margin-bottom: var(--space-12);
+            color: var(--color-primary);
+        }
+        
+        .info-card ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .info-card li {
+            padding: var(--space-8) 0;
+            padding-left: var(--space-20);
+            position: relative;
+        }
+        
+        .info-card li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--color-accent);
+            font-weight: var(--font-weight-bold);
+        }
+        
+        /* Product Grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: var(--space-32);
+        }
+        
+        .product-card {
+            background-color: var(--color-surface);
+            border: 1px solid var(--color-card-border);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            transition: all var(--duration-normal) var(--ease-standard);
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .product-card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-4px);
+        }
+        
+        .product-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-bottom: 1px solid var(--color-card-border);
+            background-color: var(--color-gray-200);
+        }
+        
+        .product-content {
+            padding: var(--space-24);
+        }
+        
+        .product-code {
+            display: inline-block;
+            background-color: var(--color-primary);
+            color: var(--color-white);
+            padding: var(--space-8) var(--space-12);
+            border-radius: var(--radius-sm);
+            font-size: var(--font-size-sm);
+            font-weight: var(--font-weight-semibold);
+            margin-bottom: var(--space-12);
+        }
+        
+        .product-name {
+            font-size: var(--font-size-xl);
+            font-weight: var(--font-weight-bold);
+            margin-bottom: var(--space-8);
+            color: var(--color-text);
+        }
+        
+        .product-subtitle {
+            font-size: var(--font-size-base);
+            color: var(--color-text-secondary);
+            margin-bottom: var(--space-16);
+            font-style: italic;
+        }
+        
+        .product-description {
+            font-size: var(--font-size-base);
+            line-height: 1.7;
+            margin-bottom: var(--space-20);
+            color: var(--color-text);
+        }
+        
+        .product-features {
+            list-style: none;
+            margin-bottom: var(--space-20);
+        }
+        
+        .product-features li {
+            padding: var(--space-8) 0;
+            padding-left: var(--space-24);
+            position: relative;
+            font-size: var(--font-size-base);
+        }
+        
+        .product-features li:before {
+            content: "●";
+            position: absolute;
+            left: 0;
+            color: var(--color-accent);
+            font-size: var(--font-size-lg);
+        }
+        
+        .specs-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: var(--space-20) 0;
+            font-size: var(--font-size-sm);
+        }
+        
+        .specs-table tr {
+            border-bottom: 1px solid var(--color-border);
+        }
+        
+        .specs-table td {
+            padding: var(--space-12) var(--space-8);
+        }
+        
+        .specs-table td:first-child {
+            font-weight: var(--font-weight-semibold);
+            color: var(--color-text-secondary);
+            width: 45%;
+        }
+        
+        .specs-table td:last-child {
+            color: var(--color-text);
+        }
+        
+        .product-applications {
+            margin: var(--space-20) 0;
+        }
+        
+        .product-applications h4 {
+            font-size: var(--font-size-base);
+            font-weight: var(--font-weight-semibold);
+            margin-bottom: var(--space-12);
+            color: var(--color-text);
+        }
+        
+        .product-applications ul {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-8);
+        }
+        
+        .product-applications li {
+            padding: var(--space-8);
+            background-color: rgba(45, 90, 61, 0.05);
+            border-radius: var(--radius-sm);
+            font-size: var(--font-size-sm);
+            text-align: center;
+        }
+        
+        .product-availability {
+            display: inline-block;
+            padding: var(--space-8) var(--space-16);
+            background-color: rgba(33, 128, 141, 0.1);
+            color: var(--color-teal-700);
+            border-radius: var(--radius-base);
+            font-size: var(--font-size-sm);
+            font-weight: var(--font-weight-medium);
+            margin-top: var(--space-16);
+        }
+        
+        .btn-quote {
+            display: block;
+            width: 100%;
+            padding: var(--space-12) var(--space-24);
+            background-color: var(--color-accent);
+            color: var(--color-white);
+            text-align: center;
+            text-decoration: none;
+            border-radius: var(--radius-base);
+            font-weight: var(--font-weight-semibold);
+            font-size: var(--font-size-base);
+            margin-top: var(--space-20);
+            border: none;
+            cursor: pointer;
+            transition: all var(--duration-fast) var(--ease-standard);
+        }
+        
+        .btn-quote:hover {
+            background-color: var(--color-accent-green-hover);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        /* Custom Solutions */
+        .custom-solutions {
+            background: linear-gradient(135deg, rgba(45, 90, 61, 0.05) 0%, rgba(125, 217, 143, 0.05) 100%);
+            text-align: center;
+        }
+        
+        .custom-solutions-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .custom-message {
+            font-size: var(--font-size-2xl);
+            font-weight: var(--font-weight-bold);
+            color: var(--color-primary);
+            margin-bottom: var(--space-24);
+            line-height: 1.4;
+        }
+        
+        .custom-description {
+            font-size: var(--font-size-lg);
+            line-height: 1.8;
+            color: var(--color-text);
+        }
+        
+        /* Pricing Section */
+        .pricing-section {
+            background-color: var(--color-surface);
+        }
+        
+        .pricing-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .pricing-message {
+            font-size: var(--font-size-2xl);
+            font-weight: var(--font-weight-bold);
+            color: var(--color-primary);
+            margin-bottom: var(--space-16);
+        }
+        
+        .pricing-note {
+            font-size: var(--font-size-md);
+            color: var(--color-text-secondary);
+            margin-bottom: var(--space-48);
+        }
+        
+        /* Contact Form */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: var(--color-surface);
+            padding: var(--space-32);
+            border: 1px solid var(--color-card-border);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .form-group {
+            margin-bottom: var(--space-20);
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: var(--space-8);
+            font-weight: var(--font-weight-medium);
+            font-size: var(--font-size-base);
+            color: var(--color-text);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: var(--space-12);
+            font-size: var(--font-size-base);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-base);
+            background-color: var(--color-surface);
+            color: var(--color-text);
+            font-family: var(--font-family-base);
+            transition: border-color var(--duration-fast) var(--ease-standard);
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--color-primary);
+            box-shadow: 0 0 0 3px rgba(45, 90, 61, 0.1);
+        }
+        
+        textarea.form-control {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .btn-submit {
+            width: 100%;
+            padding: var(--space-16) var(--space-24);
+            background-color: var(--color-primary);
+            color: var(--color-white);
+            border: none;
+            border-radius: var(--radius-base);
+            font-size: var(--font-size-md);
+            font-weight: var(--font-weight-semibold);
+            cursor: pointer;
+            transition: all var(--duration-fast) var(--ease-standard);
+        }
+        
+        .btn-submit:hover {
+            background-color: var(--color-primary-hover);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: var(--color-primary);
+            color: var(--color-white);
+            padding: var(--space-48) var(--space-24);
+        }
+        
+        .footer-content {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-48);
+            margin-bottom: var(--space-32);
+        }
+        
+        .footer-section h3 {
+            font-size: var(--font-size-lg);
+            margin-bottom: var(--space-16);
+            font-weight: var(--font-weight-semibold);
+        }
+        
+        .footer-section p,
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            display: block;
+            margin-bottom: var(--space-8);
+            font-size: var(--font-size-base);
+        }
+        
+        .footer-section a:hover {
+            color: var(--color-accent);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: var(--space-24);
+            text-align: center;
+            font-size: var(--font-size-sm);
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: var(--font-size-2xl);
+            color: var(--color-text);
+            cursor: pointer;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: var(--color-surface);
+                flex-direction: column;
+                padding: var(--space-24);
+                box-shadow: var(--shadow-md);
+            }
+            
+            .nav.active {
+                display: flex;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: var(--font-size-3xl);
+            }
+            
+            .section-title {
+                font-size: var(--font-size-2xl);
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .product-applications ul {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-contacts {
+                flex-direction: column;
+                gap: var(--space-16);
+            }
+        }
+        
+        /* Print Styles */
+        @media print {
+            .header,
+            .nav,
+            .mobile-menu-btn,
+            .btn-quote,
+            .btn-submit,
+            .contact-form {
+                display: none;
+            }
+            
+            .product-card {
+                page-break-inside: avoid;
+            }
+            
+            body {
+                background-color: white;
+            }
+        }
+        
+        /* Success Message */
+        .success-message {
+            display: none;
+            padding: var(--space-16);
+            background-color: rgba(33, 128, 141, 0.1);
+            color: var(--color-teal-700);
+            border-radius: var(--radius-base);
+            margin-top: var(--space-16);
+            text-align: center;
+            font-weight: var(--font-weight-medium);
+        }
+        
+        .success-message.show {
+            display: block;
+        }
+        
+        /* Image Modal */
+        .image-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity var(--duration-normal) var(--ease-standard);
+        }
+        
+        .image-modal.active {
+            display: flex;
+            opacity: 1;
+        }
+        
+        .image-modal-content {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .image-modal-close {
+            position: absolute;
+            top: var(--space-20);
+            right: var(--space-32);
+            font-size: var(--font-size-4xl);
+            color: var(--color-white);
+            cursor: pointer;
+            background: none;
+            border: none;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform var(--duration-fast) var(--ease-standard);
+        }
+        
+        .image-modal-close:hover {
+            transform: scale(1.2);
+        }
+        
+        .product-image {
+            cursor: pointer;
+            transition: opacity var(--duration-fast) var(--ease-standard);
+        }
+        
+        .product-image:hover {
+            opacity: 0.85;
+        }
+        
+        .image-click-hint {
+            text-align: center;
+            font-size: var(--font-size-xs);
+            color: var(--color-text-secondary);
+            margin-top: var(--space-8);
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <div>ООО «ОрганикС»</div>
+                <div class="logo-tagline">Органы управления техникой</div>
+            </div>
+            <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Меню">☰</button>
+            <nav class="nav" id="mainNav">
+                <a href="#company">О компании</a>
+                <a href="#products">Продукция</a>
+                <a href="#custom">Индивидуальные решения</a>
+                <a href="#pricing">Цены</a>
+                <a href="#contact">Контакты</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Профессиональные органы управления для спецтехники</h1>
+            <p>Проектирование, инжиниринг и производство систем управления под требования заказчика. Надежность и качество европейского уровня.</p>
+            <div class="hero-contacts">
+                <div class="hero-contact-item">
+                    <svg fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                    OrganikC.SK@yandex.ru
+                </div>
+                <div class="hero-contact-item">
+                    <svg fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                    +7 (926) 220-31-71
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Company Information -->
+    <section class="section company-info" id="company">
+        <div class="section-content">
+            <h2 class="section-title">О компании</h2>
+            <p class="section-subtitle">ООО «ОрганикС» - разработчик и производитель профессиональных органов управления для специальной техники</p>
+            
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Наша специализация</h3>
+                    <ul>
+                        <li>Проектирование систем управления</li>
+                        <li>Инжиниринг и реинжиниринг</li>
+                        <li>Разработка конструкторской документации</li>
+                        <li>Серийное производство</li>
+                        <li>Техническая поддержка</li>
+                    </ul>
+                </div>
+                
+                <div class="info-card">
+                    <h3>Преимущества</h3>
+                    <ul>
+                        <li>Индивидуальный подход к каждому проекту</li>
+                        <li>Высокое качество продукции</li>
+                        <li>Соответствие мировым стандартам</li>
+                        <li>Полный цикл разработки и производства</li>
+                        <li>Опыт работы с ведущими производителями</li>
+                    </ul>
+                </div>
+                
+                <div class="info-card">
+                    <h3>Области применения</h3>
+                    <ul>
+                        <li>Строительная техника</li>
+                        <li>Сельскохозяйственные машины</li>
+                        <li>Коммунальная техника</li>
+                        <li>Лесозаготовительное оборудование</li>
+                        <li>Специальная техника различного назначения</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="section" id="products">
+        <div class="section-content">
+            <h2 class="section-title">Каталог продукции</h2>
+            <p class="section-subtitle">Профессиональные решения для управления спецтехникой</p>
+            
+            <div class="products-grid">
+                <!-- Product 1: РП1 -->
+                <div class="product-card">
+                    <img src="photo_5188444975061397859_y.jpeg" alt="Рукоятка пропорциональная РП1" class="product-image">
+                    <div class="product-content">
+                        <span class="product-code">РП1</span>
+                        <h3 class="product-name">Рукоятка пропорциональная РП1</h3>
+                        <p class="product-subtitle">Одноосевая рукоятка с потенциометрическим датчиком</p>
+                        <p class="product-description">Рукоятка управления предназначена для преобразования механического перемещения, создаваемого рукой оператора, в электрический сигнал с потенциометрами. Применяется для задания управляющего сигнала электронных систем управления. Является важным элементом управления, который значительно повышает безопасность, эффективность и комфорт работы оператора.</p>
+                        
+                        <ul class="product-features">
+                            <li>Высокая надежность и долговечность</li>
+                            <li>Широкий диапазон рабочих температур</li>
+                            <li>Защита IP54/IP67</li>
+                            <li>Механический ресурс до 3 млн циклов</li>
+                            <li>6 модификаций в наличии</li>
+                        </ul>
+                        
+                        <table class="specs-table">
+                            <tr><td>Количество осей</td><td>1 ось</td></tr>
+                            <tr><td>Тип датчика</td><td>Потенциометрический</td></tr>
+                            <tr><td>Количество потенциометров</td><td>1 шт.</td></tr>
+                            <tr><td>Дискретные входы</td><td>до 3 шт.</td></tr>
+                            <tr><td>Пропорциональные входы</td><td>1 шт.</td></tr>
+                            <tr><td>Напряжение питания</td><td>24 В DC</td></tr>
+                            <tr><td>Степень защиты</td><td>IP54 / IP67 (опционально)</td></tr>
+                            <tr><td>Рабочая температура</td><td>-40°C ... +50°C</td></tr>
+                            <tr><td>Механический ресурс</td><td>≥ 3 000 000 циклов</td></tr>
+                            <tr><td>Электрический ресурс</td><td>≥ 1 000 000 циклов</td></tr>
+                        </table>
+                        
+                        <div class="product-applications">
+                            <h4>Применение:</h4>
+                            <ul>
+                                <li>Строительная техника</li>
+                                <li>Сельскохозяйственные машины</li>
+                                <li>Коммунальная техника</li>
+                                <li>Специальная техника</li>
+                            </ul>
+                        </div>
+                        
+                        <span class="product-availability">✓ В наличии, серийные поставки</span>
+                        <a href="#contact" class="btn-quote">Запросить коммерческое предложение</a>
+                    </div>
+                </div>
+
+                <!-- Product 2: РП2 -->
+                <div class="product-card">
+                    <img src="photo_5188444975061397852_y.jpeg" alt="Рукоятка пропорциональная РП2" class="product-image">
+                    <div class="product-content">
+                        <span class="product-code">РП2</span>
+                        <h3 class="product-name">Рукоятка пропорциональная РП2</h3>
+                        <p class="product-subtitle">Двухосевая рукоятка для управления двумя функциями</p>
+                        <p class="product-description">Двухосевая рукоятка управления обеспечивает одновременное управление двумя функциями машины. Предназначена для преобразования механического перемещения в электрические сигналы с высокой точностью и надежностью. Эргономичная конструкция снижает усталость оператора при длительной работе.</p>
+                        
+                        <ul class="product-features">
+                            <li>Управление двумя функциями одновременно</li>
+                            <li>Эргономичная конструкция</li>
+                            <li>Высокая точность позиционирования</li>
+                            <li>Надежная конструкция для тяжелых условий</li>
+                            <li>Различные конфигурации доступны</li>
+                        </ul>
+                        
+                        <table class="specs-table">
+                            <tr><td>Количество осей</td><td>2 оси</td></tr>
+                            <tr><td>Тип датчика</td><td>Потенциометрический</td></tr>
+                            <tr><td>Количество потенциометров</td><td>2 шт.</td></tr>
+                            <tr><td>Дискретные входы</td><td>до 2 шт.</td></tr>
+                            <tr><td>Пропорциональные входы</td><td>2 шт.</td></tr>
+                            <tr><td>Напряжение питания</td><td>24 В DC</td></tr>
+                            <tr><td>Степень защиты</td><td>IP54 / IP67 (опционально)</td></tr>
+                            <tr><td>Рабочая температура</td><td>-40°C ... +50°C</td></tr>
+                            <tr><td>Механический ресурс</td><td>≥ 3 000 000 циклов</td></tr>
+                            <tr><td>Электрический ресурс</td><td>≥ 1 000 000 циклов</td></tr>
+                        </table>
+                        
+                        <div class="product-applications">
+                            <h4>Применение:</h4>
+                            <ul>
+                                <li>Краны и манипуляторы</li>
+                                <li>Экскаваторы</li>
+                                <li>Погрузчики</li>
+                                <li>Строительная техника</li>
+                            </ul>
+                        </div>
+                        
+                        <span class="product-availability">◆ Конфигурация под заказ</span>
+                        <a href="#contact" class="btn-quote">Запросить коммерческое предложение</a>
+                    </div>
+                </div>
+
+                <!-- Product 3: РР -->
+                <div class="product-card">
+                    <img src="photo_5188444975061397846_y.jpeg" alt="Рукоятка релейная РР" class="product-image" onclick="openImageModal(this.src, this.alt)">
+                    <p class="image-click-hint">Нажмите для увеличения</p>
+                    <div class="product-content">
+                        <span class="product-code">РР</span>
+                        <h3 class="product-name">Рукоятка релейная РР</h3>
+                        <p class="product-subtitle">Релейная рукоятка с дискретными контактами</p>
+                        <p class="product-description">Рукоятка релейная управления с дискретными контактами (сухой контакт). Не имеет пропорционального сигнала, работает по принципу контакт замкнут/разомкнут при отклонении рукоятки. Идеальна для систем с релейным управлением.</p>
+                        
+                        <ul class="product-features">
+                            <li>Дискретное управление «сухой контакт»</li>
+                            <li>Релейная логика без пропорционального сигнала</li>
+                            <li>Высокая надежность релейной коммутации</li>
+                            <li>Простота интеграции в релейные системы</li>
+                            <li>Настройка под требования заказчика</li>
+                        </ul>
+                        
+                        <table class="specs-table">
+                            <tr><td>Тип управления</td><td>Дискретное (релейное)</td></tr>
+                            <tr><td>Тип контактов</td><td>Сухие контакты (реле)</td></tr>
+                            <tr><td>Принцип работы</td><td>Контакт замкнут/разомкнут</td></tr>
+                            <tr><td>Количество контактов</td><td>2-4 шт.</td></tr>
+                            <tr><td>Коммутируемый ток</td><td>до 2 А</td></tr>
+                            <tr><td>Степень защиты</td><td>IP54 / IP67 (опционально)</td></tr>
+                            <tr><td>Рабочая температура</td><td>-40°C ... +50°C</td></tr>
+                            <tr><td>Механический ресурс</td><td>≥ 1 000 000 циклов</td></tr>
+                        </table>
+                        
+                        <div class="product-applications">
+                            <h4>Применение:</h4>
+                            <ul>
+                                <li>Системы с релейным управлением</li>
+                                <li>Дискретное управление гидравликой</li>
+                                <li>Старые модели техники</li>
+                                <li>Простые системы управления</li>
+                            </ul>
+                        </div>
+                        
+                        <span class="product-availability">◆ Конфигурация под заказ</span>
+                        <a href="#contact" class="btn-quote">Запросить коммерческое предложение</a>
+                    </div>
+                </div>
+
+                <!-- Product 4: ЭД -->
+                <div class="product-card">
+                    <img src="photo_5188444975061397857_y.jpeg" alt="Электронный джойстик ЭД" class="product-image" onclick="openImageModal(this.src, this.alt)">
+                    <p class="image-click-hint">Нажмите для увеличения</p>
+                    <div class="product-content">
+                        <span class="product-code">ЭД</span>
+                        <h3 class="product-name">Электронный джойстик ЭД</h3>
+                        <p class="product-subtitle">CAN-интерфейс и USB HID для ПК</p>
+                        <p class="product-description">Электронный джойстик нового поколения с поддержкой CAN Bus (J1939/CAN Open) и USB HID для подключения к компьютеру. Обеспечивает высочайшую точность, программируемость и надежность. USB режим позволяет использовать джойстик как универсальный контроллер для ПК.</p>
+                        
+                        <ul class="product-features">
+                            <li>CAN J1939 / CAN Open интерфейс</li>
+                            <li>USB HID для подключения к компьютеру</li>
+                            <li>Программируемые параметры</li>
+                            <li>Расширенный температурный диапазон</li>
+                            <li>Высокая степень защиты IP65</li>
+                        </ul>
+                        
+                        <table class="specs-table">
+                            <tr><td>Количество осей</td><td>3 оси</td></tr>
+                            <tr><td>Интерфейс CAN</td><td>CAN J1939 / CAN Open</td></tr>
+                            <tr><td>Интерфейс USB</td><td>USB 2.0 HID (Human Interface Device)</td></tr>
+                            <tr><td>USB скорость</td><td>Full Speed (12 Мбит/с)</td></tr>
+                            <tr><td>Режимы работы</td><td>CAN Bus / USB HID для ПК</td></tr>
+                            <tr><td>Аналоговые входы</td><td>1 шт.</td></tr>
+                            <tr><td>Дискретные входы</td><td>3-4 шт.</td></tr>
+                            <tr><td>Напряжение питания</td><td>9-36 В DC (ном. 12/24 В)</td></tr>
+                            <tr><td>Потребляемый ток</td><td>типично 20-30 мА</td></tr>
+                            <tr><td>Степень защиты</td><td>IP65</td></tr>
+                            <tr><td>Рабочая температура</td><td>-40°C ... +70°C</td></tr>
+                            <tr><td>Разъем</td><td>DEUTSCH DTM04-6P</td></tr>
+                            <tr><td>Длина кабеля</td><td>1,5 м (стандартно)</td></tr>
+                        </table>
+                        
+                        <div class="product-applications">
+                            <h4>Применение:</h4>
+                            <ul>
+                                <li>Современные строительные машины</li>
+                                <li>Дорожно-строительная техника</li>
+                                <li>Коммунальная техника с CAN</li>
+                                <li>Электрогидравлические системы</li>
+                                <li>Универсальный контроллер для ПК</li>
+                                <li>Системы симуляции и обучения</li>
+                            </ul>
+                        </div>
+                        
+                        <span class="product-availability">⚙ Разработка КД, серийное производство через 6-7 месяцев</span>
+                        <a href="#contact" class="btn-quote">Запросить коммерческое предложение</a>
+                    </div>
+                </div>
+
+                <!-- Product 5: КПС -->
+                <div class="product-card">
+                    <img src="photo_5188444975061397846_y.jpeg" alt="Контроллер преобразования сигналов" class="product-image" onclick="openImageModal(this.src, this.alt)">
+                    <p class="image-click-hint">Нажмите для увеличения</p>
+                    <div class="product-content">
+                        <span class="product-code">КПС</span>
+                        <h3 class="product-name">Контроллер преобразования сигналов</h3>
+                        <p class="product-subtitle">Универсальный контроллер для электрогидравлических систем</p>
+                        <p class="product-description">Контроллер предназначен для преобразования аналоговых сигналов или цифрового сигнала из шины CAN в сигналы ШИМ для управления различными устройствами (золотники гидрораспределителей, гидронасосы, гидромоторы и пр.). Все выходы оснащены измерителями тока с ПИД-регулятором для точного поддержания заданных значений. Специализированное ПО позволяет гибко настраивать контроллер.</p>
+                        
+                        <ul class="product-features">
+                            <li>Преобразование CAN в ШИМ</li>
+                            <li>Встроенный ПИД-регулятор</li>
+                            <li>Измерение тока на всех выходах</li>
+                            <li>Входы Lock_A/Lock_B для безопасности</li>
+                            <li>Гибкая настройка параметров</li>
+                        </ul>
+                        
+                        <table class="specs-table">
+                            <tr><td>Габаритные размеры</td><td>119×93×16 мм</td></tr>
+                            <tr><td>Напряжение питания</td><td>10-30 В DC</td></tr>
+                            <tr><td>Аналоговые входы 0-5В</td><td>2 шт.</td></tr>
+                            <tr><td>Аналоговые входы 4-20 мА</td><td>2 шт.</td></tr>
+                            <tr><td>Дискретные входы</td><td>2 шт.</td></tr>
+                            <tr><td>Входы Lock (защита)</td><td>2 шт. (Lock_A, Lock_B)</td></tr>
+                            <tr><td>Силовые выходы ШИМ</td><td>4 шт. (0-3 А)</td></tr>
+                            <tr><td>Дискретные выходы</td><td>2 шт. (до 3 А)</td></tr>
+                            <tr><td>Питание датчиков</td><td>5 В, 100 мА, 2 шт.</td></tr>
+                            <tr><td>Шина CAN</td><td>CAN Open</td></tr>
+                            <tr><td>Рабочая температура</td><td>-40°C ... +70°C</td></tr>
+                        </table>
+                        
+                        <div class="product-applications">
+                            <h4>Применение:</h4>
+                            <ul>
+                                <li>Электрогидравлические системы</li>
+                                <li>Управление пропорциональными клапанами</li>
+                                <li>Системы с CAN-интерфейсом</li>
+                                <li>Модернизация гидравлических систем</li>
+                            </ul>
+                        </div>
+                        
+                        <span class="product-availability">✓ В наличии</span>
+                        <a href="#contact" class="btn-quote">Запросить коммерческое предложение</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Custom Solutions -->
+    <section class="section custom-solutions" id="custom">
+        <div class="section-content">
+            <div class="custom-solutions-content">
+                <h2 class="section-title">Индивидуальные решения</h2>
+                <p class="custom-message">Готовы выполнить любое исполнение по запросу заказчика</p>
+                <p class="custom-description">
+                    Наша инженерная команда готова разработать и изготовить органы управления под ваши специфические требования. 
+                    Мы предлагаем полный цикл разработки - от проектирования до серийного производства. 
+                    Индивидуальный подход, гибкость в реализации технических решений и соответствие всем необходимым стандартам качества.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="section pricing-section" id="pricing">
+        <div class="section-content">
+            <div class="pricing-content">
+                <h2 class="section-title">Цены и условия поставки</h2>
+                <p class="pricing-message">Цена и сроки поставки - по запросу</p>
+                <p class="pricing-note">
+                    Стоимость зависит от конфигурации, объема заказа и дополнительных требований. 
+                    Свяжитесь с нами для получения индивидуального коммерческого предложения.
+                </p>
+                
+                <!-- Contact Form -->
+                <div class="contact-form" id="contact">
+                    <h3 style="margin-bottom: var(--space-24); text-align: center; color: var(--color-primary);">Запрос коммерческого предложения</h3>
+                    <form onsubmit="handleSubmit(event)">
+                        <div class="form-group">
+                            <label class="form-label" for="name">Имя *</label>
+                            <input type="text" id="name" name="name" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="email">Email *</label>
+                            <input type="email" id="email" name="email" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="phone">Телефон *</label>
+                            <input type="tel" id="phone" name="phone" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="product">Интересующая продукция</label>
+                            <select id="product" name="product" class="form-control">
+                                <option value="">Выберите продукт</option>
+                                <option value="rp1">РП1 - Рукоятка пропорциональная (1 ось)</option>
+                                <option value="rp2">РП2 - Рукоятка пропорциональная (2 оси)</option>
+                                <option value="rr">РР - Рукоятка с роликами</option>
+                                <option value="ed">ЭД - Электронный джойстик</option>
+                                <option value="kps">КПС - Контроллер преобразования сигналов</option>
+                                <option value="custom">Индивидуальное решение</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="message">Сообщение</label>
+                            <textarea id="message" name="message" class="form-control" rows="4" placeholder="Опишите ваши требования и задачи..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn-submit">Отправить запрос</button>
+                        <div class="success-message" id="successMessage">
+                            ✓ Спасибо! Ваш запрос отправлен. Мы свяжемся с вами в ближайшее время.
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>ООО «ОрганикС»</h3>
+                    <p>Органы управления техникой</p>
+                    <p>ИНН: 5001117297</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Контакты</h3>
+                    <a href="tel:+79262203171">+7 (926) 220-31-71</a>
+                    <a href="tel:+79857687555">+7 (985) 768-75-55 (поддержка)</a>
+                    <a href="mailto:OrganikC.SK@yandex.ru">OrganikC.SK@yandex.ru</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Адрес</h3>
+                    <p>121205 г. Москва,<br>
+                    тер. Инновационного центра Сколково,<br>
+                    бульвар Большой, д. 42, стр. 1</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 ООО «ОрганикС». Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Image Modal -->
+    <div class="image-modal" id="imageModal" onclick="closeImageModal()">
+        <button class="image-modal-close" onclick="closeImageModal()" aria-label="Закрыть">&times;</button>
+        <img src="" alt="" class="image-modal-content" id="modalImage" onclick="event.stopPropagation()">
+    </div>
+
+    <script>
+        // Image Modal Functions
+        function openImageModal(src, alt) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            modalImg.src = src;
+            modalImg.alt = alt;
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeImageModal() {
+            const modal = document.getElementById('imageModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        
+        // Close modal on Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeImageModal();
+            }
+        });
+        
+        // Mobile menu toggle
+        function toggleMenu() {
+            const nav = document.getElementById('mainNav');
+            nav.classList.toggle('active');
+        }
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                const nav = document.getElementById('mainNav');
+                nav.classList.remove('active');
+            });
+        });
+        
+        // Form submission handler
+        function handleSubmit(event) {
+            event.preventDefault();
+            
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                product: document.getElementById('product').value,
+                message: document.getElementById('message').value
+            };
+            
+            // Show success message
+            const successMessage = document.getElementById('successMessage');
+            successMessage.classList.add('show');
+            
+            // Reset form
+            event.target.reset();
+            
+            // Hide success message after 5 seconds
+            setTimeout(() => {
+                successMessage.classList.remove('show');
+            }, 5000);
+            
+            // In a real application, you would send this data to a server
+            console.log('Form submitted:', formData);
+        }
+        
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        // Observe product cards
+        document.querySelectorAll('.product-card, .info-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
